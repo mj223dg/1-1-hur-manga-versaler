@@ -23,7 +23,8 @@ namespace CountCapitals
 
                 Result.Text = "Antalet versaler: " + Capitals;
                 TextBox.Enabled = false;
-                SendButton.Visible = false;
+                SendButton.Text = "Rensa";
+
             }
         }
     }
