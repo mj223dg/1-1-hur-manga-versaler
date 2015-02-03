@@ -12,15 +12,10 @@
             <div>
                 <h1>Hur många versaler?</h1>
                 <asp:TextBox ID="TextBox" runat="server" TextMode="MultiLine"></asp:TextBox>
-                <asp:Button ID="SendButton" runat="server" Text="Beräkna antalet versaler." OnClick="SendButton_Click" />
+                <asp:Button ID="SendButton" runat="server" Text="Beräkna antalet versaler" OnClick="SendButton_Click" />
+                <asp:Button ID="ResetButton" runat="server" Text="Rensa" OnClick="ResetButton_Click" Visible="False" />
                 <asp:Label ID="Result" runat="server"></asp:Label>
-
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Fältet kan inte vara tomt." Display="Dynamic" Text="*" ControlToValidate="TextBox"></asp:RequiredFieldValidator>
-                <asp:CompareValidator ID="CompareValidator1" runat="server" ErrorMessage="Test fältet skall bara innehålla text." Display="Dynamic" Text="*" ControlToValidate="TextBox" Operator="DataTypeCheck" Type="String"></asp:CompareValidator>
-                <asp:ValidationSummary ID="ValidationSummary1" runat="server" DisplayMode="SingleParagraph" />
-            </div>
-                
-                
+            </div>     
         </form>
 </body>
 </html>

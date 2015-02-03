@@ -17,14 +17,24 @@ namespace CountCapitals
 
         protected void SendButton_Click(object sender, EventArgs e)
         {
-            if (IsValid)
+
+            if (TextBox.Text.Length > 0)
+                {
+                    int Capitals = TextAnalyzer.GetNumberOfCapitals(TextBox.Text);
+
+                    Result.Text = "Antalet versaler: " + Capitals;
+                    TextBox.Enabled = false;
+                    SendButton.Text = "Rensa";
+                    SendButton.Visible = false;
+                    ResetButton.Visible = true;
+                }
+        }
+
+        protected void ResetButton_Click(object sender, EventArgs e)
+        {
+            if (ResetButton.Visible == true)
             {
-                int Capitals = TextAnalyzer.GetNumberOfCapitals(TextBox.Text);
-
-                Result.Text = "Antalet versaler: " + Capitals;
-                TextBox.Enabled = false;
-                SendButton.Text = "Rensa";
-
+                Server.Transfer("Default.aspx", true);
             }
         }
     }
